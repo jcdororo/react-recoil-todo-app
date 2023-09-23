@@ -11,15 +11,17 @@ const TodoItemCreator = () => {
   }
 
   const addItem = () => {
-    setTodoList((oldTodoList) => [
-      ...oldTodoList,
-      {
-        id: getId(),
-        text: inputValue,
-        isComplete: false
-      }
-    ])
-    setInputValue('');
+    if(inputValue !== ''){
+      setTodoList((oldTodoList) => [
+        ...oldTodoList,
+        {
+          id: getId(),
+          text: inputValue,
+          isComplete: false
+        }
+      ])
+      setInputValue('');
+    }
   }
 
   return (
